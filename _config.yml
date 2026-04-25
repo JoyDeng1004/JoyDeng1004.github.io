@@ -1,0 +1,26 @@
+# ============================================
+# 网站基本信息 (Site Metadata)
+# ============================================
+
+title: "Joy"
+description: "Researching end-to-end autonomous driving. Notes from the lab, the cluster, and occasionally elsewhere."
+tagline: "Personal log — research notes, learning journal, and occasional thoughts on life."
+
+author:
+  name: "Joy Deng"
+  email: "dengqiaoyi2001@gmail.com" 
+
+# 网站完整网址
+url: "https://joydeng1004.github.io"
+baseurl: ""
+
+# 社交账号
+github_username: "JoyDeng1004"
+
+# ============================================
+# Jekyll 构建相关
+# ============================================
+exclude:
+  - README.md
+  - LICENSE
+  - .gitignore
