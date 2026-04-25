@@ -5,7 +5,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Joy — Personal Site</title>
+<title>{{ site.title }} — Personal Site</title>
+
+<!-- SEO 描述:谷歌搜索结果里显示的那段小字 -->
+<meta name="description" content="{{ site.description }}">
+<meta name="author" content="{{ site.author.name }}">
+ 
+<!-- 社交分享(微信/Twitter/Facebook)预览卡片 -->
+<meta property="og:title" content="{{ site.title }}">
+<meta property="og:description" content="{{ site.description }}">
+<meta property="og:url" content="{{ site.url }}">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ site.title }}">
+<meta name="twitter:description" content="{{ site.description }}">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
