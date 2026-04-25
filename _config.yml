@@ -1,8 +1,6 @@
 # ============================================
 # 网站基本信息 (Site Metadata)
 # ============================================
-# 改这里的值就能更新整个网站的标题和描述
-# 不用改其他文件
 
 title: "Joy"
 description: "Researching autonomous systems & simulation infrastructure. Notes from the lab, the cluster, and occasionally elsewhere."
@@ -10,9 +8,9 @@ tagline: "Personal log — research notes, learning journal, and occasional thou
 
 author:
   name: "Joy Deng"
-  email: "your-email@example.com"   # 改成你真实的邮箱
+  email: "dengqiaoyi2001@gmail.com" 
 
-# 网站完整网址 (用于生成绝对链接和社交分享)
+# 网站完整网址
 url: "https://joydeng1004.github.io"
 baseurl: ""
 
@@ -31,8 +29,6 @@ exclude:
 # ============================================
 # Markdown 解析与代码高亮
 # ============================================
-# kramdown 是 Jekyll 默认 Markdown 解析器
-# math_engine: mathjax 让 $$..$$ 块原样输出,交给前端的 MathJax 渲染
 markdown: kramdown
 kramdown:
   math_engine: mathjax
