@@ -1,26 +1,56 @@
 # ============================================
 # 网站基本信息 (Site Metadata)
 # ============================================
+# 改这里的值就能更新整个网站的标题和描述
+# 不用改其他文件
 
 title: "Joy"
-description: "Researching end-to-end autonomous driving. Notes from the lab, the cluster, and occasionally elsewhere."
+description: "Researching autonomous systems & simulation infrastructure. Notes from the lab, the cluster, and occasionally elsewhere."
 tagline: "Personal log — research notes, learning journal, and occasional thoughts on life."
 
 author:
   name: "Joy Deng"
-  email: "dengqiaoyi2001@gmail.com" 
+  email: "your-email@example.com"   # 改成你真实的邮箱
 
-# 网站完整网址
+# 网站完整网址 (用于生成绝对链接和社交分享)
 url: "https://joydeng1004.github.io"
 baseurl: ""
 
-# 社交账号
+# 社交账号 (footer 链接会用到)
 github_username: "JoyDeng1004"
 
 # ============================================
-# Jekyll 构建相关
+# Jekyll 构建相关 (一般不用改)
 # ============================================
+# 防止 Jekyll 处理这些文件
 exclude:
   - README.md
   - LICENSE
   - .gitignore
+
+# ============================================
+# Markdown 解析与代码高亮
+# ============================================
+# kramdown 是 Jekyll 默认 Markdown 解析器
+# math_engine: mathjax 让 $$..$$ 块原样输出,交给前端的 MathJax 渲染
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
+# ============================================
+# 文章 URL 格式
+# ============================================
+# 默认是 /YYYY/MM/DD/title.html 太丑;改成 /posts/YYYY-MM-DD-title/
+permalink: /posts/:year-:month-:day-:title/
+
+# ============================================
+# 文章默认值
+# ============================================
+# _posts/ 里的所有 .md 文件自动套用 post 模板,无需每篇都写 layout
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
