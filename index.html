@@ -404,7 +404,31 @@
   }
 </style>
 </head>
+
 <body>
+<!-- 顶部导航条 -->
+<nav class="top-nav">
+  <div class="top-nav-inner">
+    <a href="/" class="top-nav-brand">{{ site.title | downcase }}</a>
+    <ul class="top-nav-links">
+      <li><a href="#writing">writing</a></li>
+      <li><a href="#now">about</a></li>
+      <li><a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">github</a></li>
+    </ul>
+  </div>
+</nav>
+ 
+<!-- 主视觉横幅 (Hero Panel) -->
+<section class="hero reveal reveal-1">
+  <div class="hero-inner">
+    <div class="meta-bar">
+      <span>./{{ site.title | downcase }} &mdash; personal log</span>
+      <span class="status">online</span>
+    </div>
+    <h1 class="name">{{ site.title }}<span class="cursor"></span></h1>
+    <p class="tagline">{{ site.tagline }}</p>
+  </div>
+</section>
 
 <div class="container">
 
