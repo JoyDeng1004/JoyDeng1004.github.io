@@ -5,12 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- 浏览器标签页显示的标题 -->
 <title>{{ site.title }} — Personal Site</title>
 
 <!-- SEO 描述:谷歌搜索结果里显示的那段小字 -->
 <meta name="description" content="{{ site.description }}">
 <meta name="author" content="{{ site.author.name }}">
- 
+
 <!-- 社交分享(微信/Twitter/Facebook)预览卡片 -->
 <meta property="og:title" content="{{ site.title }}">
 <meta property="og:description" content="{{ site.description }}">
@@ -345,7 +347,7 @@
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--line);
   }
- 
+
   .top-nav-inner {
     max-width: 720px;
     margin: 0 auto;
@@ -355,7 +357,7 @@
     justify-content: space-between;
     gap: 24px;
   }
- 
+
   .top-nav-brand {
     font-family: var(--mono);
     font-size: 12px;
@@ -364,19 +366,19 @@
     letter-spacing: 0.05em;
     white-space: nowrap;
   }
- 
+
   .top-nav-brand::before {
     content: '~/';
     color: var(--accent);
     margin-right: 2px;
   }
- 
+
   .top-nav-links {
     display: flex;
     gap: 24px;
     list-style: none;
   }
- 
+
   .top-nav-links a {
     font-family: var(--mono);
     font-size: 12px;
@@ -385,13 +387,13 @@
     letter-spacing: 0.05em;
     transition: color 0.2s ease;
   }
- 
+
   .top-nav-links a::before {
     content: '/';
     color: var(--text-faint);
     margin-right: 1px;
   }
- 
+
   .top-nav-links a:hover {
     color: var(--accent);
   }
@@ -410,7 +412,7 @@
       radial-gradient(ellipse at 20% 30%, rgba(80, 130, 200, 0.04) 0%, transparent 60%),
       linear-gradient(180deg, var(--bg) 0%, var(--bg-elev) 100%);
   }
- 
+
   /* 用多层 radial-gradient 平铺出星点效果,不需要图片 */
   .hero::before {
     content: '';
@@ -430,13 +432,13 @@
     pointer-events: none;
     animation: drift 80s linear infinite;
   }
- 
+
   /* 星点缓慢漂移,营造"在动"的感觉但很克制 */
   @keyframes drift {
     from { transform: translate(0, 0); }
     to { transform: translate(-250px, -250px); }
   }
- 
+
   .hero-inner {
     position: relative;
     z-index: 2;
@@ -445,17 +447,17 @@
     margin: 0 auto;
     padding: 96px 32px;
   }
- 
+
   /* hero 里的 meta-bar 不要原本 header 的 margin */
   .hero .meta-bar {
     margin-bottom: 48px;
   }
- 
+
   /* 因为 hero 自带顶部空间,主容器顶部留白调小 */
   .hero + .container {
     padding-top: 64px;
   }
- 
+
   @media (max-width: 600px) {
     .top-nav-inner { padding: 12px 20px; }
     .top-nav-brand { font-size: 11px; }
@@ -466,8 +468,8 @@
   }
 </style>
 </head>
-
 <body>
+
 <!-- 顶部导航条 -->
 <nav class="top-nav">
   <div class="top-nav-inner">
@@ -479,7 +481,7 @@
     </ul>
   </div>
 </nav>
- 
+
 <!-- 主视觉横幅 (Hero Panel) -->
 <section class="hero reveal reveal-1">
   <div class="hero-inner">
@@ -494,16 +496,8 @@
 
 <div class="container">
 
-  <header class="reveal reveal-1">
-    <div class="meta-bar">
-      <span>./joy &mdash; personal log</span>
-      <span class="status">online</span>
-    </div>
-    <h1 class="name">Joy<span class="cursor"></span></h1>
-    <p class="tagline">Researching <em>autonomous systems</em> &amp; <em>simulation infrastructure</em>. Notes from the lab, the cluster, and occasionally elsewhere.</p>
-  </header>
 
-  <section class="reveal reveal-2">
+  <section id="now" class="reveal reveal-2">
     <div class="section-label">/now</div>
     <dl class="now-grid">
       <dt>Working on</dt>
@@ -517,7 +511,7 @@
     </dl>
   </section>
 
-  <section class="reveal reveal-3">
+  <section id="writing" class="reveal reveal-3">
     <div class="section-label">/writing</div>
     <ul class="posts">
       <li><a href="#">
