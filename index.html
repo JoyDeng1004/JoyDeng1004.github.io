@@ -333,6 +333,75 @@
   .reveal-4 { animation-delay: 0.35s; }
   .reveal-5 { animation-delay: 0.45s; }
   .reveal-6 { animation-delay: 0.55s; }
+
+  /* ===== HERO PANEL ===== */
+  /* 主视觉横幅:全宽,深色渐变 + CSS 生成的星点 */
+  .hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+    background:
+      radial-gradient(ellipse at 70% 60%, rgba(245, 166, 99, 0.06) 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 30%, rgba(80, 130, 200, 0.04) 0%, transparent 60%),
+      linear-gradient(180deg, var(--bg) 0%, var(--bg-elev) 100%);
+  }
+ 
+  /* 用多层 radial-gradient 平铺出星点效果,不需要图片 */
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 25% 20%, rgba(232, 228, 220, 0.9), transparent 50%),
+      radial-gradient(1px 1px at 75% 35%, rgba(232, 228, 220, 0.7), transparent 50%),
+      radial-gradient(2px 2px at 50% 65%, rgba(245, 166, 99, 0.5), transparent 50%),
+      radial-gradient(1px 1px at 15% 80%, rgba(232, 228, 220, 0.6), transparent 50%),
+      radial-gradient(1px 1px at 85% 75%, rgba(232, 228, 220, 0.8), transparent 50%),
+      radial-gradient(1px 1px at 35% 50%, rgba(232, 228, 220, 0.4), transparent 50%),
+      radial-gradient(2px 2px at 65% 15%, rgba(232, 228, 220, 0.6), transparent 50%);
+    background-size: 250px 250px;
+    background-repeat: repeat;
+    opacity: 0.7;
+    pointer-events: none;
+    animation: drift 80s linear infinite;
+  }
+ 
+  /* 星点缓慢漂移,营造"在动"的感觉但很克制 */
+  @keyframes drift {
+    from { transform: translate(0, 0); }
+    to { transform: translate(-250px, -250px); }
+  }
+ 
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 96px 32px;
+  }
+ 
+  /* hero 里的 meta-bar 不要原本 header 的 margin */
+  .hero .meta-bar {
+    margin-bottom: 48px;
+  }
+ 
+  /* 因为 hero 自带顶部空间,主容器顶部留白调小 */
+  .hero + .container {
+    padding-top: 64px;
+  }
+ 
+  @media (max-width: 600px) {
+    .top-nav-inner { padding: 12px 20px; }
+    .top-nav-brand { font-size: 11px; }
+    .top-nav-links { gap: 14px; }
+    .top-nav-links a { font-size: 11px; }
+    .hero { min-height: 50vh; }
+    .hero-inner { padding: 64px 20px; }
+  }
 </style>
 </head>
 <body>
