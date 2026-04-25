@@ -334,6 +334,68 @@
   .reveal-5 { animation-delay: 0.45s; }
   .reveal-6 { animation-delay: 0.55s; }
 
+  /* ===== TOP NAV ===== */
+  /* 顶部导航条:吸顶、半透明、毛玻璃模糊 */
+  .top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 13, 20, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+ 
+  .top-nav-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 14px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+ 
+  .top-nav-brand {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+ 
+  .top-nav-brand::before {
+    content: '~/';
+    color: var(--accent);
+    margin-right: 2px;
+  }
+ 
+  .top-nav-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+  }
+ 
+  .top-nav-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-dim);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color 0.2s ease;
+  }
+ 
+  .top-nav-links a::before {
+    content: '/';
+    color: var(--text-faint);
+    margin-right: 1px;
+  }
+ 
+  .top-nav-links a:hover {
+    color: var(--accent);
+  }
+
   /* ===== HERO PANEL ===== */
   /* 主视觉横幅:全宽,深色渐变 + CSS 生成的星点 */
   .hero {
