@@ -314,6 +314,47 @@
     display: block;
   }
 
+  /* ===== LIFE / NOTE CARDS ===== */
+  .note-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .note-card {
+    min-height: 180px;
+    border: 1px solid var(--line-strong);
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01)),
+      var(--bg-elev);
+    border-radius: 6px;
+    padding: 20px;
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  }
+  .note-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-dim);
+    background: rgba(245, 166, 99, 0.045);
+  }
+  .note-card-kicker {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 18px;
+  }
+  .note-card h2 {
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+  .note-card p {
+    color: var(--text-dim);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
   /* ===== STACK ===== */
   .stack-list {
     display: flex;
@@ -531,6 +572,8 @@
     .now-grid dt { padding-top: 16px; }
     .now-grid dt:first-of-type { padding-top: 0; }
     .posts a { grid-template-columns: 1fr; gap: 6px; }
+    .note-cards { grid-template-columns: 1fr; }
+    .note-card { min-height: auto; }
     .site-footer-inner { flex-direction: column; gap: 16px; align-items: flex-start; padding: 32px 20px; }
     .post-header { padding: 40px 0 32px; }
     .post-title { font-size: 30px; }
@@ -564,6 +607,7 @@
     <a href="{{ '/' | relative_url }}" class="top-nav-brand">{{ site.title | downcase }}</a>
     <ul class="top-nav-links">
       <li><a href="{{ '/#writing' | relative_url }}">writing</a></li>
+      <li><a href="{{ '/#life' | relative_url }}">life</a></li>
       <li><a href="{{ '/#now' | relative_url }}">about</a></li>
       <li><a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">github</a></li>
     </ul>
